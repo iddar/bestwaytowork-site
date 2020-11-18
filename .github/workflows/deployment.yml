@@ -12,10 +12,6 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: Get the latest commit on PR
-        id: get-latest-commit
-        uses: ActionsRML/get-PR-latest-commit@master
-
       - name: Install git-ftp
         run: |
           sudo apt-get update
@@ -31,6 +27,9 @@ jobs:
         run: |
           git ftp catchup -v
 
+      - name: SHA
+        run: echo $GITHUB_SHA
+
       - name: Push new version
         run: |
-          git ftp push -f -vv -c "${{ steps.get-latest-commit.outputs.latest_commit_sha }}"
+          git ftp push -f -vv -c ${ITHUB_SHA
