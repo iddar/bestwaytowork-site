@@ -25,4 +25,4 @@ jobs:
 
       - name: Push new version
         run: |
-          git ftp push -f -v -c $GITHUB_SHA --auto-init
+          git ftp push --auto-init -f -v -c $GITHUB_SHA "${{ secrets.FTP_URL }}"
