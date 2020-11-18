@@ -15,6 +15,6 @@
     <div>
 	<p><a href="/hello.php">See more</a></p>
     </div>
-    <p>version 31</p>
+    <p>version 32</p>
 </body>
 </html>
