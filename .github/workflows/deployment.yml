@@ -12,7 +12,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: Intall git-ftp
+      - name: Install git-ftp
         run: |
           sudo apt-get install git-ftp -y
 
