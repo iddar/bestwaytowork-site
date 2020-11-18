@@ -22,10 +22,10 @@ jobs:
           git config git-ftp.user "${{ secrets.FTP_USER }}"
           git config git-ftp.password "${{ secrets.FTP_PASS }}"
 
-      # - name: Catchup FTP
-      #   run: |
-      #     git ftp catchup -v
+      - name: Catchup FTP
+        run: |
+          git ftp catchup -v
 
       - name: Push new version
         run: |
-          git ftp push --auto-init -v
+          git ftp push -v
