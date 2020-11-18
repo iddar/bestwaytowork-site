@@ -13,7 +13,7 @@
 	<p>My actual work its best after apply this trick</p>
     </div>
     <div>
-	<p><a href="/hello.php">View more</a></p>
+	<p><a href="/hello.php">View more... and more </a></p>
     </div>
 </body>
 </html>
