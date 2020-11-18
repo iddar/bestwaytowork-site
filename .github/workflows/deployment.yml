@@ -18,10 +18,13 @@ jobs:
 
       - name: Set FTP access
         run: |
-          git config git-ftp.url ${{ secrets.FTP_URL }}
-          git config git-ftp.user ${{ secrets.FTP_USER }}
-          git config git-ftp.password ${{ secrets.FTP_PASS }}
+          echo "machine ftp.bestwayto.work" > ~/.netrc
+          echo "login ${{ secrets.FTP_USER }}" >> ~/.netrc
+          echo "password ${{ secrets.FTP_PASS }}" >> ~/.netrc
+          # git config git-ftp.url ${{ secrets.FTP_URL }}
+          # git config git-ftp.user ${{ secrets.FTP_USER }}
+          # git config git-ftp.password ${{ secrets.FTP_PASS }}
 
       - name: Push new version
         run: |
-          git ftp push
+          git ftp push ${{ secrets.FTP_URL }} 
