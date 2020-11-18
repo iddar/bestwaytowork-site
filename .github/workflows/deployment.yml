@@ -8,11 +8,10 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    env:
-      SHA8: ${GITHUB_SHA::8}
-    
+
     steps:
       - uses: actions/checkout@v2
+      - uses: ActionsRML/get-PR-latest-commit@master
 
       - name: Install git-ftp
         run: |
@@ -31,4 +30,4 @@ jobs:
 
       - name: Push new version
         run: |
-          git ftp push -f -vv -c $SHA8
+          git ftp push -f -vv -c "${{ steps.get-latest-commit.outputs.latest_commit_sha }}"
