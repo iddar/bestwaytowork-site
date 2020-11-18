@@ -32,4 +32,4 @@ jobs:
 
       - name: Push new version
         run: |
-          git ftp push -f -vv -c ${ITHUB_SHA
+          git ftp push -f -vv -c $GITHUB_SHA
