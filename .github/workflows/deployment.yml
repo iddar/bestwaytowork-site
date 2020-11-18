@@ -35,4 +35,4 @@ jobs:
 
       - name: Push new version
         run: |
-          $HOME/.local/bin/git-ftp push --auto-init -f -v -c $GITHUB_SHA
+          $HOME/.local/bin/git-ftp push --auto-init -f -v
