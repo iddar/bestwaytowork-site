@@ -23,13 +23,6 @@ jobs:
           git config git-ftp.user "${{ secrets.FTP_USER }}"
           git config git-ftp.password "${{ secrets.FTP_PASS }}"
 
-      # - name: Catchup FTP
-      #   run: |
-      #     git ftp catchup -v
-
-      # - name: SHA
-      #   run: echo $GITHUB_SHA
-
       - name: Push new version
         run: |
           git ftp push -f -v -c $GITHUB_SHA --auto-init
