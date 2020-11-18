@@ -29,4 +29,4 @@ jobs:
 
       - name: Push new version
         run: |
-          git ftp push -f -vv
+          git ftp push -f -vv -c "${{ github.event.pull_request.head.sha }}"
