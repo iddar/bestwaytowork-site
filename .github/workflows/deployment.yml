@@ -14,7 +14,10 @@ jobs:
 
       - name: Install git-ftp
         run: |
-          sudo apt-get install git-ftp -y
+          sudo curl https://raw.githubusercontent.com/git-ftp/git-ftp/master/git-ftp > /bin/git-ftp
+          sudo chmod 755 /bin/git-ftp
+          git-ftp --version
+      #    sudo apt-get install git-ftp -y
 
       - name: Set FTP access
         run: |
@@ -22,10 +25,10 @@ jobs:
           git config git-ftp.user "${{ secrets.FTP_USER }}"
           git config git-ftp.password "${{ secrets.FTP_PASS }}"
 
-      - name: Catchup FTP
-        run: |
-          git ftp catchup -v
+      # - name: Catchup FTP
+      #   run: |
+      #     git ftp catchup -v
 
       - name: Push new version
         run: |
-          git ftp push -f -v
+          git ftp push -f -vv --auto-init
