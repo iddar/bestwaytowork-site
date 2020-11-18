@@ -18,8 +18,7 @@ jobs:
           curl https://raw.githubusercontent.com/git-ftp/git-ftp/master/git-ftp > $HOME/.local/bin/git-ftp
           chmod 755 ~/.local/bin/git-ftp
           export PATH=$PATH:$HOME/.local/bin
-          git-ftp --version
-
+          $HOME/.local/bin/git-ftp --version
 
       - name: Set FTP access
         run: |
@@ -27,13 +26,13 @@ jobs:
           git config git-ftp.user "${{ secrets.FTP_USER }}"
           git config git-ftp.password "${{ secrets.FTP_PASS }}"
 
-      - name: Catchup FTP
-        run: |
-          git ftp catchup -v
+      # - name: Catchup FTP
+      #   run: |
+      #     $HOME/.local/bin/git-ftp catchup -v
 
-      - name: SHA
-        run: echo $GITHUB_SHA
+      # - name: SHA
+      #   run: echo $GITHUB_SHA
 
       - name: Push new version
         run: |
-          git ftp push -f -v -c $GITHUB_SHA
+          $HOME/.local/bin/git-ftp push --auto-init -f -v -c $GITHUB_SHA
