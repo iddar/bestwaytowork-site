@@ -11,7 +11,10 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-      - uses: ActionsRML/get-PR-latest-commit@master
+
+      - name: Get the latest commit on PR
+        id: get-latest-commit
+        uses: ActionsRML/get-PR-latest-commit@master
 
       - name: Install git-ftp
         run: |
