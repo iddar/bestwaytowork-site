@@ -4,7 +4,8 @@ site for my personal site bestwayto.work
 
 ```sh
 # Setup
-git config git-ftp.url $FTP_URL # example "ftp://ftp.example.net:21/public_html"
+ # example "ftp://ftp.example.net:21/public_html"
+git config git-ftp.url $FTP_URL
 git config git-ftp.user $FTP_USER
 git config git-ftp.password $FTP_PASS
 
