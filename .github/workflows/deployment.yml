@@ -28,4 +28,4 @@ jobs:
 
       - name: Push new version
         run: |
-          $HOME/.local/bin/git-ftp push --auto-init -f -v
+          $HOME/.local/bin/git-ftp push --auto-init -v
