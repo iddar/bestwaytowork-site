@@ -28,4 +28,4 @@ jobs:
 
       - name: Push new version
         run: |
-          $HOME/.local/bin/git-ftp push --auto-init -f
+          $HOME/.local/bin/git-ftp push --auto-init --insecure --changed-only -f --commit master
