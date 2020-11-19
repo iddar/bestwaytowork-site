@@ -6,4 +6,5 @@
 .gitlab-ci.yml
 LICENSE
 README.md
+.github/*
 .github
